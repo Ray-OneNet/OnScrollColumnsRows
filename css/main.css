@@ -351,7 +351,7 @@ video.column__item-img{
   }
 
 section.target_section{
-	margin-top:1vw;
+	/* margin-top:1vw; */
 	width: 100%;
 	height: 100vh;
 	/* height: 200vh; */
