@@ -189,7 +189,9 @@ const scroll = () => {
 
 // Preload images, initialize smooth scrolling, apply scroll-triggered animations, and remove loading class from body
 preloadImages('.column__item-img').then(() => {
-	initSmoothScrolling();
-	scroll();
+	setTimeout(()=>{
+		initSmoothScrolling();
+		scroll();
+	},0)
 	document.body.classList.remove('loading');
 });

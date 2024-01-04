@@ -98,6 +98,7 @@ main {
 	place-items: center;
 	width: 100%;
 	position: relative;
+	overflow: hidden;
 }
 
 .outro {
@@ -344,7 +345,7 @@ video.column__item-img{
 	pointer-events: none;
 	/* transform: skewX(5deg) translateX(-40%); */
   }
-  .animated_div > video {
+  .animated_div > video,section.target_section video {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
