@@ -130,7 +130,7 @@ const scroll = () => {
 			.fromTo(row.querySelector('.column__item-img'),{
 				scale: 1.35,
 				startAt: {transformOrigin: rowMapping[type].transformOrigin},
-				opacity: 0
+				opacity: 0,
 			}, {
 				ease: 'power1.in',
 				scale: 1,
