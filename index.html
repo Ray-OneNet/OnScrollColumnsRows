@@ -1,828 +1,1238 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Mobile animation demo</title>
-		<meta name="description" content="Scroll-driven animations for columns and rows powered by GSAP" />
-		<meta name="keywords" content="scroll animation, grid, column, javascript, css, gsap, 3d, distort" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" href="https://use.typekit.net/rzt6nuu.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
-		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-		<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
-	</head>
-	<body class="demo-7 loading">
-		<main>
-	
-			<div class="columns">
-		        <div class="column">
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-					
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-13.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-5.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-17.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-8.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-6.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-14.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-18.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-15.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mobile animation demo</title>
+    <meta
+      name="description"
+      content="Scroll-driven animations for columns and rows powered by GSAP"
+    />
+    <meta
+      name="keywords"
+      content="scroll animation, grid, column, javascript, css, gsap, 3d, distort"
+    />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://use.typekit.net/rzt6nuu.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+    <script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+  </head>
+  <body class="demo-7 loading">
+    <main>
+      <div class="columns">
+        <div class="column">
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
 
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-13.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-5.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-17.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-8.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-6.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-14.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-18.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-15.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
 
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-13.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-16.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+        </div>
+        <!-- /column -->
+        <div class="column">
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-17.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-9.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-18.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
 
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-20.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-13.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-1.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-14.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-1.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-9.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-6.gif)"
+              ></div>
+            </div>
+          </figure>
+        </div>
+        <!-- /column -->
+        <div class="column">
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-15.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-17.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-16.gif)"
+              ></div>
+            </div>
+          </figure>
 
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-13.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-16.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-		        </div><!-- /column -->
-		        <div class="column">
-				
-					
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-17.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-9.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-18.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-	
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-1.gif)"
+              ></div>
+            </div>
+          </figure>
 
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-19.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-9.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-20.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
 
-
-
-
-
-
-
-
-
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-20.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-13.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-1.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-14.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-1.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-9.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-6.gif)"></div>
-						</div>
-					</figure>
-				
-
-		        </div><!-- /column -->
-		        <div class="column">
-				
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-15.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-17.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-16.gif)"></div>
-						</div>
-					</figure>
-				
-
-
-
-
-
-					<figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-1.gif)"></div>
-						</div>
-					</figure>
-					
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-19.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-9.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-20.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-		       
-
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-1.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-18.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-5.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap" >
-							<div class="column__item-img" style="background-image:url(video/gif-20.gif)"></div>
-							
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap" id="flip-point-1">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-							<!-- <video autoplay muted loop  class="column__item-img" >
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-1.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-18.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-5.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-20.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap" id="flip-point-1">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+              <!-- <video autoplay muted loop  class="column__item-img" >
 								<source src="/video/main-bg-video.mp4" type="video/mp4" >
 								Your browser does not support the video tag.
 							  </video> -->
-						</div>
-					</figure>
-					
-		        </div><!-- /column -->
+            </div>
+          </figure>
+        </div>
+        <!-- /column -->
 
+        <div class="column">
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-14.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-9.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-15.gif)"
+              ></div>
+            </div>
+          </figure>
 
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-9.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-18.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-8.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-19.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-20.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-1.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-7.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-6.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
+        </div>
+        <!-- /column -->
+        <div class="column">
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-13.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-1.gif)"
+              ></div>
+            </div>
+          </figure>
 
-				
-		        <div class="column">
-					
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-14.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-9.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-15.gif)"></div>
-						</div>
-					</figure>
-					
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-8.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-14.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-5.gif)"
+              ></div>
+            </div>
+          </figure>
 
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-7.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-17.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-7.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-16.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-21.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-1.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-5.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-18.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
 
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-19.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-17.gif)"
+              ></div>
+            </div>
+          </figure>
+        </div>
+        <!-- /column -->
 
+        <div class="column">
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-15.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-17.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-11.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-16.gif)"
+              ></div>
+            </div>
+          </figure>
 
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-3.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-1.gif)"
+              ></div>
+            </div>
+          </figure>
 
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-9.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-18.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-8.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-19.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-20.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-1.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-7.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-6.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-		        </div><!-- /column -->
-		        <div class="column">
-					<figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-13.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-1.gif)"></div>
-						</div>
-					</figure>
-					
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-8.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-14.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-5.gif)"></div>
-						</div>
-					</figure>
-		       
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-19.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-9.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-20.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-4.gif)"
+              ></div>
+            </div>
+          </figure>
 
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-1.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-10.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-18.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-5.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-12.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-20.gif)"
+              ></div>
+            </div>
+          </figure>
+          <figure class="column__item">
+            <div class="column__item-imgwrap" id="flip-point-1">
+              <div
+                class="column__item-img"
+                style="background-image: url(video/gif-2.gif)"
+              ></div>
+            </div>
+          </figure>
+        </div>
 
-
-					
-
-
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-7.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-17.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-						</div>
-					</figure>
-							<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-7.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-16.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-21.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-1.gif)"></div>
-						</div>
-						</figure>
-						<figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-5.gif)"></div>
-		                </div>
-		            </figure>
-		            <figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-18.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-						</div>
-					</figure>
-			
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-19.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-17.gif)"></div>
-						</div>
-					</figure>
-				
-		        </div><!-- /column -->
-
-
-				<div class="column">
-				
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-15.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-17.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-11.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-16.gif)"></div>
-						</div>
-					</figure>
-					
-
-
-
-
-
-					<figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-3.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-1.gif)"></div>
-						</div>
-					</figure>
-					
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-19.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-9.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-		                <div class="column__item-imgwrap">
-		                    <div class="column__item-img" style="background-image:url(video/gif-20.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-4.gif)"></div>
-						</div>
-					</figure>
-		       
-
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-1.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-10.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-18.gif)"></div>
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-5.gif)"></div>
-						</div>
-					</figure>
-		            <figure class="column__item">
-						<div class="column__item-imgwrap">
-							<div class="column__item-img" style="background-image:url(video/gif-12.gif)"></div>
-		                </div>
-		            </figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap" >
-							<div class="column__item-img" style="background-image:url(video/gif-20.gif)"></div>
-							
-						</div>
-					</figure>
-					<figure class="column__item">
-						<div class="column__item-imgwrap" id="flip-point-1">
-							<div class="column__item-img" style="background-image:url(video/gif-2.gif)"></div>
-					
-						</div>
-					</figure>
-					
-		        </div>
-
-		            <!-- <div class="column">
+        <!-- <div class="column">
 				
 					
 			
@@ -960,29 +1370,31 @@
 				
 
 		        </div> -->
-
-			</div>
-			
-
-		</main>
-		<!-- <div  class="animated_div" id="animatedCard">
+      </div>
+    </main>
+    <!-- <div  class="animated_div" id="animatedCard">
 			<video autoplay muted loop>
 				<source src="/video/main-bg-video.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			  </video>
 		</div> -->
-		<section class="target_section" id="flip-point-2">
-			<video autoplay muted loop>
-				<source src="/video/main-bg-video.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			  </video>
-	</section>
-		<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="js/gsap.min.js"></script>
-		<script src="js/ScrollTrigger.min.js"></script>
-		<script src="js/lenis.min.js"></script>
-		<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script type="module" src="js/main.js"></script>
-	</body>
+    <section class="target_section" id="flip-point-2">
+      <video autoplay muted loop>
+        <source src="/video/main-bg-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+    <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/lenis.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
