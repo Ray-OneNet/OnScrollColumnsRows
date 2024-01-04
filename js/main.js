@@ -135,7 +135,7 @@ const scroll = () => {
 				ease: 'power1.in',
 				scale: 1,
 				opacity: 1,
-				delay: Math.random() * 0.5
+				delay: Math.random() * 0.3
 			}, 0);
 		});
 	});
