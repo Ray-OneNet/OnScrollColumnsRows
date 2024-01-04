@@ -29,27 +29,28 @@ window.onload = function() {
     let tl=gsap.timeline()
     .to("main",{
         opacity: 1,
-        duration: 1
+        duration: 1,
+        delay: 0.25
     })
     .to(".loader_column-inner",{
         width: "100vw",
         height: "100%",
-        duration: 3,
+        duration: 2.5,
         ease: "sine.inOut",
     })
     .to(".loader_column-inner.is-cented",{
         y: "0%",
-        duration: 3,
+        duration: 2.5,
         ease: "power2.inOut",
     },"<")
     .to(".loader_column-inner.is-reverse",{
         y: "10%",
-        duration: 3,
+        duration: 2.5,
         ease: "power2.inOut",
     },"<+0.25")
     .to(".loader_column-inner.is-edge",{
         y: "0%",
-        duration: 3,
+        duration: 2.5,
         ease: "power2.inOut",
     },"<+0.25")
     .to(".loader_img-wrap > img, .loader_img-wrap > video",{
