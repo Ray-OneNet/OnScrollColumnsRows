@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mobile animation demo</title>
+    <meta
+      name="description"
+      content="Scroll-driven animations for columns and rows powered by GSAP"
+    />
+    <meta
+      name="keywords"
+      content="scroll animation, grid, column, javascript, css, gsap, 3d, distort"
+    />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://use.typekit.net/rzt6nuu.css" />
+    <link rel="stylesheet" type="text/css" href="css/version-2.css" />
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+    <script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+  </head>
+  <body class="demo-7 loading">
+    <main>
+      <div class="loader">
+        <div class="loader_flex">
+          <div class="loader_column">
+            <div class="loader_column-inner is-edge">
+              <div class="loader_img-wrap">
+                <img src="video/gif-1.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-2.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-3.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-4.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-5.gif" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="loader_column is-alt">
+            <div class="loader_column-inner is-reverse">
+              <div class="loader_img-wrap">
+                <img src="video/gif-6.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-7.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-8.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-9.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-10.gif" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="loader_column">
+            <div class="loader_column-inner is-cented">
+              <div class="loader_img-wrap">
+                <img src="video/gif-11.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-12.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap" id="main-img">
+                <video autoplay muted loop class="is-middle">
+                  <source src="/video/main-bg-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-13.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-14.gif" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="loader_column is-alt">
+            <div class="loader_column-inner  is-reverse">
+              <div class="loader_img-wrap">
+                <img src="video/gif-15.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-16.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-17.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-18.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-19.gif" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="loader_column">
+            <div class="loader_column-inner is-edge">
+              <div class="loader_img-wrap">
+                <img src="video/gif-20.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-21.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-13.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-4.gif" alt="" />
+              </div>
+              <div class="loader_img-wrap">
+                <img src="video/gif-5.gif" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/CustomEase.min.js"></script>
+    <script src="js/lenis.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script type="module" src="js/version2.js"></script>
+  </body>
+</html>
