@@ -64,7 +64,7 @@
 	--grid-item-ratio: 0.75;
 	--grid-item-radius: 0px;
 	--grid-gap: 1vw;
-	--grid-columns: 4;
+	--grid-columns: 5;
 	--grid-width: 140%;
 	--grid-max-width: none;
 }
@@ -293,7 +293,7 @@ span.frame__demos-item:not(:first-child) {
 	place-items: center;
     grid-template-columns: repeat(var(--grid-columns),1fr);
     gap: var(--grid-gap);
-	right: -40%;
+	right: -10%;
 	/* transform: scale(1.25,1.25) */
 }
 
